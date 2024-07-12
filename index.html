@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨平台網頁設置 0513-1 ch.14 SPA 形象官網的製作</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/myall.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <style>
+        /* 中線註冊 */
+        .timeline-section {
+            position: relative;
+        }
+
+        .timeline-section::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--textc04);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        .caption-text {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .text-cover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .price {
+            font-size: 30px;
+            color: var(--atextc01);
+            margin-right: 0.25em;
+        }
+
+        .price1 {
+            font-size: 10px;
+        }
+
+        .text-s11_11,
+        .text-s11_21 {
+            position: relative;
+        }
+
+        .text-s11_12,
+        .text-s11_22 {
+            position: absolute;
+            bottom: 0;
+
+        }
+
+
+
+        .text-s13_1 {
+            text-decoration: none;
+            color: inherit;
+            border-radius: 20px;
+        }
+
+        .s16 {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            background-color: #B0C4DE;
+            border-radius: 50%;
+            padding: 15px 20px;
+            color: inherit;
+            z-index: 30;
+
+        }
+
+
+
+        @media screen and (max-width:768px) {
+            .text-s07 {
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: #ffffff;
+                margin: 15px;
+                padding: 15px;
+                border-radius: 30px;
+
+            }
+
+            .timeline-section:before {
+                position: absolute;
+                content: "";
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background-color: var(--textc04);
+                left: -100%;
+                transform: translateX(-50%);
+            }
+
+            .text-s06 {
+                display: none;
+            }
+
+            .text-s09 {
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: #ffffff;
+                margin: 15px;
+                padding: 15px;
+                border-radius: 30px;
+
+
+            }
+
+            .text-s11 {
+
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: #ffffff;
+                margin: 15px;
+                padding: 15px;
+                border-radius: 30px;
+                margin-top: 150px;
+                text-align: center;
+
+            }
+
+
+            .text-s11_12,
+            .text-s11_22 {
+                position: static;
+
+
+            }
+
+            .text-s11_12_d,
+            .text-s11_22_d {
+                margin-top: 10px;
+
+            }
+
+
+            .text-s13 {
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: #ffffff;
+                margin: 15px;
+                padding: 15px;
+                border-radius: 30px;
+                margin-top: 70%;
+            }
+
+        }
+
+        @media screen and (min-width:767px) {
+            .si7 {
+                width: 20%;
+                left: 20%;
+            }
+
+            .text-s11_p {
+                margin: auto;
+            }
+
+
+
+
+
+            .text-s13 {
+                z-index: 10;
+                height: 30%;
+                background-color: rgba(0, 0, 0, 0);
+                color: #ffffff;
+                margin: 15px;
+                padding: 15px;
+                border-radius: 30px;
+                margin-top: 70%;
+            }
+        }
+
+        @media screen and (min-width:767px) and (max-width:1100px) {
+       
+            .text-s11 {
+
+                z-index: 10;
+                /* width: 100%; */
+                height: 75%;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: #ffffff;
+                margin: 15px;
+                padding: 15px;
+                border-radius: 30px;
+                margin-top: 35%;
+            }
+
+            .text-s11_12,
+            .text-s11_22 {
+                position: static;
+
+
+            }
+
+        }
+
+        @media screen and (min-width:1101px) {
+
+            .text-s11 {
+
+                z-index: 10;
+                height: 50%;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: #ffffff;
+                margin: 15px;
+                padding: 15px;
+                border-radius: 30px;
+                margin-top: 35%;
+            }
+        }
+    </style>
+</head>
+
+<body >
+    <!-- section 01 -->
+    <section style="background-color: var(--st01);">
+        <div class="container ">
+            <div class="text-end">
+                <a href="#" class="wow animate__fadeInUp" data-wow-duration="5s" data-wow-delay="0s"
+                    data-wow-iteration="1"><i class="fa-brands fa-square-facebook text-white "></i></a>
+                <a href="#" class="wow animate__fadeInUp" data-wow-duration="5s" data-wow-delay="0s"
+                    data-wow-iteration="1"><i class="fa-brands fa-square-x-twitter text-white"></i></a>
+                <a href="#" class="wow animate__fadeInUp" data-wow-duration="5s" data-wow-delay="0s"
+                    data-wow-iteration="1"><i class="fa-brands fa-line text-white"></i></a>
+            </div>
+
+        </div>
+    </section>
+    <!-- section 02 -->
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--st02);">
+            <div class="container">
+
+                <a class="navbar-brand wow animate__heartBeat" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1" href="#">
+                    <i class="fa-solid fa-clover"></i></i>旅日妙計
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#s04">公司介紹</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#s05">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#s06">經營理念</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#s07">經營者簡介</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                服務項目
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#s08">服務項目</a></li>
+                                <li><a class="dropdown-item" href="#s09">收費標準</a></li>
+                                <li><a class="dropdown-item" href="#s13">精選行程</a></li>
+                                <li><a class="dropdown-item" href="#s15">旅日妙計商城</a></li>
+
+                                <li>
+
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#s10">聯絡我們</a></li>
+                                <li><a class="dropdown-item" href="#s12">旅日妙計優勢</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#s11">加入我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#s14">常見問題</a>
+                        </li>
+
+                    </ul>
+                    <div>
+                        <button class="btn " data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color: 
+                        var(--btn01);">
+                            登入</button>
+                        <button class="btn " data-bs-toggle="modal"
+                            data-bs-target="#registerModal" style="background-color: 
+                            var(--btn02);">註冊</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header " style="background-color: 
+                var(--btn01);">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="mb-3">
+                        <label for="" class="form-label">帳號</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">密碼</label>
+                        <input type="password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn " style="background-color: 
+                    var(--btn01);">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!--  modal-lx 放大跳窗-->
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header "style="background-color: 
+                var(--btn02);">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <!-- 註冊中線 timeline-section 放在最前面-->
+                    <div class="row timeline-section">
+                        <div class="col-6 ">
+                            <div class="h3 fw-900 text-center">會員守則</div>
+                            <p>1.誠實守信：會員在註冊和使用網站時，需提供真實、準確、完整的個人信息。如有任何信息變更，需及時更新。</p>
+                            <p>2.尊重社群：會員需尊重其他會員和網站工作人員，禁止任何形式的侮辱、誹謗、騷擾或歧視行為，維護良好的社群氛圍。</p>
+                            <p>3.合法使用：會員需遵守所有適用法律法規及網站使用條款，不得進行任何非法或不當行為。</p>
+                            <p>4.隱私保護：會員需妥善保管個人賬號和密碼，不得將賬號借予他人使用，並尊重其他會員的隱私權，未經許可不得收集、使用或分享他人的個人信息</p>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" name="" id="">
+                                <label for="" class="form-check-label">同意</label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-6 ">
+                            <div class="mb-3">
+                                <label for="" class="form-label">姓名</label>
+                                <input type="text" class="form-control" id="" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">暱稱</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="age" class="form-label ">年齡(需成年)</label>
+                                <input type="number" class="form-control " name="age" id="age">
+                                <div class="valid-feedback">您的年齡符合規則!</div>
+                    <div class="invalid-feedback">您的年齡不符合規則!!!!!!!!!</div>
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">帳號</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <labeFl for="password" class="form-label">密碼</labeFl>
+                                <input type="password" class="form-control" id="password" name="password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password1" class="form-label">確認密碼</label>
+                                <input type="password" class="form-control" id="password1" name="password1">
+                                <div class="valid-feedback">您的密碼相同</div>
+                                <div class="invalid-feedback">您的密碼不相同!!!!!!!!!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn " style="background-color: 
+                    var(--btn01);">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section 03 -->
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item bg-cover active"
+                    style="background-image: url(./images/section03j01haru.avif); height: 90vh;">
+                    <!-- 用背景圖 較方便調整 -->
+                    <!-- <img src="./images/japan1.avif" class="d-block w-100" alt="..."> -->
+                    <div class="carousel-caption d-none d-md-block caption-text wow animate__headShake"
+                        data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="1">
+                        <h5 class="fw-900" style="color:var(--ti01);">賞櫻之旅</h5>
+                        <p>日本的春季（3月至5月）是櫻花盛開的季節，吸引眾多遊客前來觀賞櫻花。</p>
+                        <p> 東京、大阪和京都等地的櫻花節熱鬧非凡，是感受日本春日浪漫的最佳時機。</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover "
+                    style="background-image: url(./images/section03j02natsu.avif); height: 90vh;">
+                    <!-- 用背景圖 較方便調整 -->
+                    <!-- <img src="./images/japan1.avif" class="d-block w-100" alt="..."> -->
+                    <div class="carousel-caption d-none d-md-block caption-text wow animate__headShake"
+                        data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="1">
+                        <h5 class="fw-900" style="color: var(--ti02);">夏日探險</h5>
+                        <p>日本的夏季（6月至8月）氣溫較高，是探訪海灘、參加夏季祭典和煙火大會的好時節。</p>
+                        <p>北海道的涼爽氣候和富士山的壯麗景色，也是夏季的熱門景點。</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover "
+                    style="background-image: url(./images/section03j03haru.avif); height: 90vh;">
+                    <!-- 用背景圖 較方便調整 -->
+                    <!-- <img src="./images/japan1.avif" class="d-block w-100" alt="..."> -->
+                    <div class="carousel-caption d-none d-md-block caption-text wow animate__headShake"
+                        data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="1">
+                        <h5 class="fw-900 " style="color:var(--ti03);">楓葉絢爛之旅</h5>
+                        <p>日本的秋季（9月至11月）以楓葉紅遍山野而著稱。</p>
+                        <p>京都和奈良等地的紅葉名勝，每年吸引大量遊客前來觀賞秋季的自然美景。</p>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover "
+                    style="background-image: url(./images/section03j04fuyu.avif); height: 90vh;">
+                    <!-- 用背景圖 較方便調整 -->
+                    <!-- <img src="./images/japan1.avif" class="d-block w-100" alt="..."> -->
+                    <div class="carousel-caption d-none d-md-block caption-text wow animate__headShake"
+                        data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="1">
+                        <h5 class="fw-900 " style="color:var(--ti04);">冬日雪國體驗</h5>
+                        <p>日本的冬季（12月至2月）有著雪國的迷人景色。</p>
+                        <p> 北海道的雪祭、長野的滑雪勝地，以及溫泉度假村，是冬季遊客的最愛。</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- section 04 -->
+    <section id="s04">
+        <!--垂直置中 align-items-center   -->
+        <div class="row align-items-center">
+            <!-- background-attachment: fixed; 固定照片 -->
+            <div class="col-md-5 "
+                style="background-image: url(./images/skytree1.avif); height: 600px; background-attachment: fixed; background-size: cover; background-position: -530px 350px;">
+            </div>
+            <div class="col-md-7 p-5">
+                <h1>成立於西元2016年 <span style="color: var(--st04);">旅日妙計</span></h1>
+                <h1 class="mb-3">專業旅遊舉辦籌畫團隊</h1>
+                <P class="mb-1">旅日妙計致力於提供一站式日本旅遊服務，讓您的日本之旅變得更加輕鬆、愉快和難忘。</P>
+                <P class="mb-1">我們的專業團隊精通日本旅遊，擁有豐富的經驗和知識，將為您量身打造完美的旅程，讓您盡情探索日本的美麗與魅力。</P>
+
+                <div class="row mt-5">
+                    <div class="col-md-3 wow animate__backInRight" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
+                        <h4>年均團數</h4>
+
+                        <h2 class="fw-900 counter01" style="color: var(--st041);">150 <span class="h4 text-muted">團</span></h2>
+                    </div>
+                    <div class="col-md-3 wow animate__backInRight" data-wow-duration="3s" data-wow-delay="0s"
+                        data-wow-iteration="1">
+                        <h4>客戶滿意度</h4>
+                        <h2 class="fw-900 counter02" style="color: var(--st042);">95 <span class="h4 text-muted">%</span></h2>
+                    </div>
+                    <div class="col-md-3 wow animate__backInRight" data-wow-duration="4s" data-wow-delay="0s"
+                        data-wow-iteration="1">
+                        <h4>銷售增長率</h4>
+                        <h2 class="fw-900 counter03" style="color: var(--st043);">20 <span class="h4 text-muted">%</span></h2>
+                    </div>
+                    <div class="col-md-3 wow animate__backInRight" data-wow-duration="5s" data-wow-delay="0s"
+                        data-wow-iteration="1">
+                        <h4>重複客戶比例</h4>
+                        <h2 class="fw-900 counter04" style="color: var(--st04);">85 <span class="h4 text-muted">%</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 05 -->
+    <section id="s05" class=" bg-dark  bg-cover  "
+        style="background-image: url(./images/japan5.avif); background-attachment: fixed;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-white py-5 me-auto">
+                    <div class="text-cover rounded rounded-4 shadow-lg p-3">
+                        <h2>規劃流程</h2>
+                        <p>當您準備開始您在日本的旅程時，「旅日妙計」將成為您最值得信賴的夥伴！我們的行程購買流程簡單易行：首先，在我們的官方網站瀏覽各種令人興奮的日本旅遊行程。然後，選擇您感興趣的行程並查看詳細信息，包括行程內容、價格。接下來，您只需點擊“聯絡我們”按鈕，選擇您想參加的行程和人數。出發前，請確保您已準備好所有必要的文件，如護照、簽證等。我們的客服團隊隨時為您提供支持和建議。最後，放鬆心情，準備享受您在日本的精彩旅程吧！
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-8 text-white">
+                    <div class="container">
+                        <div class="timeline-section">
+
+                            <div class="row mt-3 align-items-center timeline-section-pointer">
+                                <div class="col-md-6 text-center">
+                                    <div class="mytext text-cover rounded rounded-4 shadow-lg p-3 wow animate__fadeInLeftBig"
+                                        data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1">
+                                        <div class="h3 fw-900"style="color: var(--st05);"> 關於我們<small class="text-muted">about
+                                                us</small></div>
+                                        <p>歡迎來到「旅日妙計」！我們是一家專業的日本旅遊公司，致力於為您提供完美的日本之旅體驗。無論您是第一次造訪日本還是已經是老手，我們都會為您度身定制最合適的行程，讓您在這個充滿魅力和文化的國家留下難忘的回憶。
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="myimg bg-cover"
+                                        style="background-image: url(./images/japan6.avif); height: 360px;">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-3 align-items-center flex-row-reverse timeline-section-pointer">
+                                <div class="col-md-6 text-center">
+                                    <div class="mytext text-cover rounded rounded-4 shadow-lg p-3 wow animate__fadeInRightBig"
+                                        data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1">
+                                        <div class="h3 fw-900 " style="color: var(--st05);"> 店家資訊<small class="text-muted">store
+                                                info.</small></div>
+                                        <ul class="list-unstyled">
+                                            <li>店家資訊:旅日妙計</li>
+                                            <li>營業時間:週一至週五 9:00 - 18:00，週末休息。</li>
+                                            <li>地址：台中市XXX區XXX路XX號</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="myimg bg-cover"
+                                        style="background-image: url(./images/japan4.avif); height: 360px;">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row mt-3 align-items-center  timeline-section-pointer ">
+                                <div class="col-md-6 text-center">
+                                    <div class="mytext text-cover rounded rounded-4 shadow-lg p-3 wow animate__fadeInLeftBig"
+                                        data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1">
+                                        <div class="h3 fw-900 "style="color: var(--st05);"> 服務範圍<small
+                                                class="text-muted">service</small></div>
+                                        <ul class="list-unstyled">
+                                            <li>日本旅遊規劃</li>
+                                            <li>日本商品代購</li>
+                                            <li>機票代訂</li>
+                                            <li>機場接送</li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="myimg bg-cover"
+                                        style="background-image: url(./images/japanbunnka2.avif); height: 360px;">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row mt-3 align-items-center flex-row-reverse timeline-section-pointer">
+                                <div class="col-md-6 text-center">
+                                    <div class="mytext text-cover rounded rounded-4 shadow-lg p-3 wow animate__fadeInRightBig"
+                                        data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="1">
+                                        <div class="h3 fw-900 "style="color: var(--st05);"> 最新消息<small class="text-muted">News</small>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li>特價優惠：限時折扣！</li>
+                                            <li>旅遊套餐：獨家行程！</li>
+                                            <li>特價機票：限時優惠！</li>
+                                            <li>節日禮遇：慶祝活動！</li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="myimg bg-cover"
+                                        style="background-image: url(./images/japan7.avif); height: 360px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- section 06 -->
+    <section id="s06" class=" py-5" style="background-color: var(--st06);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4  text-center">
+                    <!-- fa-8x 放大8倍  -->
+                    <i class="fa-regular fa-face-grin-wide fa-8x  mb-3 wow animate__zoomInLeft"
+                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1" style="color: var(--st061);"></i>
+                    <h2 class="fw-900 text-s06">精益求精</h2>
+                    <p class="text-s06">我們不斷追求卓越，致力於提供最完美的服務和行程安排，讓您的日本之旅充滿驚喜和滿足。</p>
+                </div>
+                <div class="col-md-4  text-center">
+                    <!-- fa-8x 放大8倍  -->
+                    <i class="fa-solid fa-crosshairs fa-8x  mb-3 wow animate__zoomInDown"
+                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1" style="color: var(--st062);"></i>
+                    <h2 class="fw-900 text-s06">客製化體驗</h2>
+                    <p class="text-s06">每位旅客都是獨一無二的，我們以個性化的服務，打造專屬於您的特色行程，滿足您的所有期待和需求。</p>
+                </div>
+                <div class="col-md-4  text-center">
+                    <!-- fa-8x 放大8倍  -->
+                    <i class="fa-solid fa-handshake-simple fa-8x  mb-3 wow animate__zoomInRight"
+                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1" style="color: var(--st063);"></i>
+                    <h2 class="fw-900 text-s06">完美保障</h2>
+                    <p class="text-s06">我們堅持優質和信譽，以專業的態度和完善的服務保障，確保您的旅途安全順暢，充滿愉快的回憶。</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section 07 -->
+    <section id="s07" class="bg-light py-5" style="position: relative;">
+        <div class="row">
+            <div class="col-md-5 bg-cover si7"
+                style="background-image: url(./images/IMG_9111.JPG); position: absolute; top: 0;bottom: 0;  "></div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-7 p-3 text-s07">
+                    <h3 class="fw-900">負責人簡介：</h3>
+                    <p>紀小咪，旅日妙計的創辦人及首席執行官。擁有豐富的旅遊業經驗，曾在日本旅遊公司擔任高級顧問，深入了解日本文化和旅遊行業的方方面面。紀小咪憑藉其卓越的領導才能和豐富的知識，將旅日妙計打造成了一家業界知名的旅遊公司。
+                    </p>
+                    <!-- 中空按鈕 btn-outline-primary-->
+                    <button class="btn btn-outline-primary wow animate__slideInRight" data-wow-duration="2s"
+                        data-wow-delay="0s" data-wow-iteration="1">查看更多</button>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <h3 class="fw-500">經歷介紹：</h3>
+                            <p>紀小咪，旅日妙計創辦人暨首席執行官，畢業於台灣觀光學系，經歷豐富。曾擔任知名日本旅遊公司高級顧問，積極參與學術研究與實地考察，深獲同業好評。他深知客戶需求，決心創立旅遊公司，以個性化服務滿足旅客期待。李小明憑藉卓越領導才能和豐富知識，致力打造旅日妙計成為業界翹楚。
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <h3 class="fw-500">座右銘：</h3>
+                            <p>「腳踏實地，心懷天空。」</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 08 -->
+    <section id="s08" class="mb-3">
+        <div class="container">
+            <div class="display-3 fw-900 text-center my-3" style="color: var(--st08);">公司四大服務項目</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex wow animate__fadeInTopLeft" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
+                        <i class="fa-solid fa-person-walking-luggage fa-7x me-4 mt-5"></i>
+
+                        <div>
+                            <div class="h2">1.日本旅遊規劃</div>
+                            <p>
+                                我們提供個性化的行程規劃，包括景點選擇、交通安排和飯店預訂，確保您的旅行充滿無憂愜意。專業團隊會根據您的需求和偏好，設計出最完美的行程。
+
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex wow animate__fadeInTopRight" data-wow-duration="2.5s" data-wow-delay="0s"
+                        data-wow-iteration="1">
+                        <i class="fa-solid fa-plane-departure fa-7x me-4 mt-5"></i>
+                        <div>
+                            <div class="h2">2.機票代訂</div>
+                            <p>
+                                我們提供多種機票選擇，包括經濟艙、商務艙和頭等艙，根據您的預算和行程安排，協助您輕鬆預訂最適合的航班。
+
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex wow animate__fadeInBottomLeft" data-wow-duration="3s" data-wow-delay="0s"
+                        data-wow-iteration="1">
+
+                        <i class="fa-solid fa-van-shuttle fa-7x me-4 mt-5"></i>
+                        <div>
+                            <div class="h2">3.機場接送</div>
+                            <p>
+                                我們提供安全、舒適的機場接送服務，讓您在抵達和離開日本時無需擔心交通問題，輕鬆享受旅程的每一刻。
+
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex wow animate__fadeInBottomRight" data-wow-duration="3.5s" data-wow-delay="0s"
+                        data-wow-iteration="1">
+                        <i class="fa-solid fa-cart-shopping fa-7x me-4 mt-5"></i>
+                        <div>
+                            <div class="h2">4.日本商品代購</div>
+                            <p>
+                                無需親自前往，我們可以代您購買您喜愛的日本商品，從美妝、電子產品到特色禮品，滿足您的購物慾望，輕鬆享受日本購物樂趣。
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section 09 -->
+    <section id="s09" style="position: relative;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-7  text-s09">
+                    <!-- https://getbootstrap.com/docs/5.2/content/typography/#description-list-alignment  -->
+                    <dl class="row">
+
+                        <dt class="col-sm-3 wow animate__flash" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="infinite">收費方式及標準：</dt>
+                        <dd class="col-sm-9">
+
+                        </dd>
+
+                        <dt class="col-sm-3"></dt>
+                        <dd class="col-sm-9">
+                            <p>1.預訂費用：預訂費用為行程總費用的30%，於確定行程後支付。</p>
+                            <p>2.行程費用：行程費用以人均日幣計算，視行程內容、旅遊天數和人數而定，詳情參閱官方網站。</p>
+                            <p>3.補貼及附加費用：特殊需求或增加服務將產生額外費用，詳情請提前告知以確保準確計價。</p>
+                        </dd>
+
+                        <dt class="col-sm-3 wow animate__flash" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="infinite">其他關於收費的項目：</dt>
+                        <dd class="col-sm-9"></dd>
+
+                        <dt class="col-sm-3 text-truncate"></dt>
+                        <dd class="col-sm-9">
+                            <p>1.付款方式：接受信用卡、銀行轉帳和第三方支付平台，款項須於預訂確認後3日內支付。</p>
+                            <p>2.退款政策：行程取消需提前30天通知，扣除10%手續費後辦理退款。</p>
+                            <p>3.匯率變動：所有收費以當日日幣匯率計價，匯率變動可能導致金額略有浮動。</p>
+
+                        <dt class="col-sm-3 wow animate__tada" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="infinite" style="color: var(--st09);">優惠活動：</dt>
+                        <dd class="col-sm-9">
+                            <dl class="row">
+                                <dt class="col-sm-3">1.早鳥優惠</dt>
+                                <dt class="col-sm-3">2.團體優惠</dt>
+                                <dt class="col-sm-3">3.生日優惠</dt>
+                                <dt class="col-sm-3 mb-3">4.回饋計劃</dt>
+
+                                <dd class="col-sm-8">更多詳情，請關注我們的官方網站和社交媒體。</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-md-5 bg-cover"
+                style="background-image: url(./images/japanbunnka1.avif); position: absolute; top: 0; bottom: 0;  ">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section 10 -->
+    <section id="s10" class="mt-3 mb-3">
+        <div class="container">
+            <div class="display-3 text-dark fw-900 text-center my-3">聯絡我們</div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.7957433087104!2d120.60055390000004!3d24.1788952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e1e5070a7a7%3A0xa462167a0845084d!2z6Lev5oCd576p5pWZ5aCC!5e0!3m2!1szh-TW!2stw!4v1715564912093!5m2!1szh-TW!2stw"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="" class="form-label">姓名</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">電話</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">人數</label>
+                        <input type="number" min="1" max="10" value="1" class="form-control">
+                    </div>
+                    <div>
+                        <label for="" class="form-label">諮詢項目:</label>
+                        <div class="mb-1 form-check form-check-inline">
+                            <input type="radio" name="plan" id="" class="form-check-input">
+                            <label for="" class="form-check-label">日本旅遊規劃</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="plan" id="" class="form-check-input">
+                            <label for="" class="form-check-label">機票代訂</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="plan" id="" class="form-check-input">
+                            <label for="" class="form-check-label">機場接送</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="plan" id="" class="form-check-input">
+                            <label for="" class="form-check-label">日本商品代購</label>
+                        </div>
+                    </div>
+                    <div class="text-end mt-4">
+                        <button class="btn btn-outline-secondary">取消</button>
+                        <button class="btn btn-primary wow animate__pulse" data-wow-duration="1s" data-wow-delay="0s"
+                            data-wow-iteration="infinite">確認</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section 11 -->
+    <section id="s11" class="mb-3">
+        <div class="row">
+            <div class="col-md-6 bg-cover s11i" style="background-image: url(./images/IMG_4439.JPG); height: 700px;">
+                <div class="row text-s11">
+                    <div class="col-md-7 p-3 text-s11_11">
+                        <small class="badge p-2 " style="background-color: var(--st11);">夢想實現</small>
+                        <h3>應徵領隊導遊數名</h3>
+                        <p class="text-s11_p">工作內容：
+                            作為旅日妙計的領隊，您將負責帶領旅客探索日本的美麗和文化，確保他們的旅程順利、安全、充滿樂趣。您將與專業團隊合作，協助規劃行程、安排交通和食宿，並提供專業的導遊和諮詢服務。
+                        </p>
+                        <div class="text-s11_12">
+                            <button class="btn btn-outline-warning text-s11_12_d wow animate__pulse"
+                                data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="infinite">期待您的加入</button>
+                        </div>
+                    </div>
+                    <div class="col-md-5 p-3 ">
+
+                        <h4>適合特質：</h4>
+                        <p>熱愛旅行：喜歡探索不同的文化和地方。</p>
+
+                        <p>溝通能力：良好的溝通能力和人際關係技巧，。</p>
+
+                        <p>解決問題能力：能夠應對突發情況並迅速解決問題。</p>
+
+                        <p>安全意識：能夠保護旅客的安全和利益。</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 bg-cover s11i" style="background-image: url(./images/job01.jpeg); height: 700px;">
+                <div class="row text-s11">
+                    <div class="col-md-7 p-3 text-s11_21">
+                        <small class="badge p-2 " style="background-color: var(--st11);">夢想實現</small>
+
+                        <h3>應徵行政人員3名</h3>
+                        <p class="text-s11_p">工作內容：
+                            作為旅日妙計的行政人員，您將負責處理辦公室日常運營事務，包括文件管理、行程安排、客戶服務和資料整理等，確保公司運作順暢。
+                        </p>
+                        <div class="text-s11_22">
+                            <button class="btn btn-outline-warning text-s11_22_d wow animate__pulse "
+                                data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="infinite">期待您的加入</button>
+                        </div>
+                    </div>
+                    <div class="col-md-5 p-3">
+
+                        <h4>適合特質：</h4>
+
+                        <p>組織能力：能有效地安排工作任務。</p>
+
+                        <p>細心負責：能確保工作準確性和效率。</p>
+
+                        <p>溝通能力：能與同事共同完成工作任務。</p>
+
+                        <p>學習能力：能快速掌握新知識和技能，應用於工作中</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section 12 -->
+    <section id="s12" class="mt-4">
+        <div class="container ">
+            <div class="display-3  fw-900 text-center my-3 wow animate__bounce " data-wow-duration="2s"
+                data-wow-delay="0s" data-wow-iteration="infinite"style="color: var(--st12);">為何選擇旅日妙計</div>
+            <div class="row justify-content-between">
+                <div class="col-md-6  text-center  " style="  width: 49%; border-radius: 50%;  background-color: var(--st123);">
+
+
+                    <h2 class="fw-900 " style="color: var(--st121);">專業團隊</h2>
+                    <p style="color: var(--st122);">日本文化和旅遊專家，提供全方位服務支持。</p>
+                </div>
+
+                <div class="col-md-6  text-center " style="  width: 49%; border-radius: 50%;  background-color: var(--st123);">
+
+                    <h2 class="fw-900 " style="color: var(--st121);">完美保障</h2>
+                    <p style="color: var(--st122);">保障您旅途安全順暢，充滿愉快回憶。</p>
+                </div>
+                <div><br></div>
+                <div class="col-md-6  text-center  " style="  width: 49%; border-radius: 50%;  background-color: var(--st123);">
+
+                    <h2 class="fw-900 " style="color: var(--st121);">豐富經驗</h2>
+                    <p style="color: var(--st122);">廣受客戶信賴，成為首選旅遊服務商。</p>
+                </div>
+                <div class="col-md-6 text-center " style="  width: 49%; border-radius: 50%; background-color: var(--st123);">
+
+                    <h2 class="fw-900 " style="color: var(--st121);">價值回饋</h2>
+                    <p style="color: var(--st122);">提供更多福利，讓旅行更實惠有價值。</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section 13 -->
+
+    <section id="s13">
+        <div class="container">
+            <div class="display-3 text-dark fw-900 text-center my-3">精選行程推薦</div>
+            <div class="row justify-content-around">
+                <a href="#s13-1" id="s13-1" class="col-md-5 bg-cover mb-3 text-s13_1"
+                    style="background-image: url(./images/IMG_4992.JPG); background-size: cover; height:650px;">
+                    <div class="col-md-7 p-3 text-s13">
+                        <h3>近郊旅遊 - 江之島</h3>
+                        <p>位於東京灣口的江之島，有著壯麗的海景、寧靜的寺廟和迷人的景點，是遠離都市喧囂的理想去處。</p>
+                        <p class="price wow animate__tada " data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="infinite">$35000<small>元</small> <small class="price1">起</small></p>
+                    </div>
+                </a>
+                <a href="#s13-2" id="s13-2" class="col-md-5 bg-cover mb-3 text-s13_1"
+                    style="background-image: url(./images/photo-1670737273667-537a8018fdc4.avif); background-size: cover; height:650px;">
+                    <div class="col-md-7 p-3 text-s13">
+                        <h3>溫泉 - 銀山溫泉</h3>
+                        <p>距離仙台不遠的銀山溫泉地區，擁有豐富的溫泉資源和迷人的自然景觀，是放鬆身心的絕佳之地。</p>
+                        <p class="price wow animate__tada " data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="infinite">$55000<small>元</small> <small class="price1">起</small></p>
+                    </div>
+                </a>
+                <a href="#s13-3" id="s13-3" class="col-md-5 bg-cover mb-3 text-s13_1"
+                    style="background-image: url(./images/sorasak-_UIN-pFfJ7c-unsplash.jpg); background-size: cover; height:650px;">
+                    <div class="col-md-7 p-3 text-s13">
+                        <h3>文化 - 京都古都</h3>
+                        <p>距離大阪不遠的京都是日本文化的代表之一，擁有許多古老的寺廟、神社和傳統建築，讓您感受到濃厚的歷史氛圍。</p>
+                        <p class="price wow animate__tada " data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="infinite">$39999<small>元</small> <small class="price1">起</small></p>
+                    </div>
+                </a>
+                <a href="#s13-4" id="s13-4" class="col-md-5 bg-cover mb-3 text-s13_1 "
+                    style="background-image: url(./images/photo-1680614429134-e64aaf27af60.avif); background-size: cover; height:650px;">
+                    <div class="col-md-7 p-3 text-s13">
+                        <h3>樂園 - 迪士尼樂園</h3>
+                        <p>位於東京近郊的迪士尼樂園是全家人的理想去處，擁有充滿魔法的迪士尼世界，讓您盡情享受歡樂時光。</p>
+                        <p class="price wow animate__tada " data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="infinite">$45000<small>元</small> <small class="price1">起</small></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- section 14 -->
+    <section id="s14">
+        <div class="container">
+
+
+            <div class="h3  wow animate__lightSpeedInRight fw-900 " data-wow-duration="1s" data-wow-delay="0s"
+                data-wow-iteration="1" style="color: var(--st15);">
+                常見問題解答：
+            </div>
+            <div class=" wow animate__lightSpeedInRight " data-wow-duration="1s" data-wow-delay="0s"
+                data-wow-iteration="1">
+                <p class="fw-500">Q：我們可以在哪裡預訂你們的服務？</p>
+                <p>A：您可以在我們的官方網站上預訂服務，或者通過電話、郵件或社交媒體聯繫我們的客服團隊。</p>
+                <hr>
+            </div>
+            <div class=" wow animate__lightSpeedInRight " data-wow-duration="1s" data-wow-delay="0s"
+                data-wow-iteration="1">
+                <p class="fw-500">Q：是否可以取消或更改預訂？</p>
+                <p>A：是的，您可以取消或更改預訂，但需提前通知我們，具體取消政策請參閱我們的網站或聯繫客服人員。</p>
+                <hr>
+            </div>
+            <div class=" wow animate__lightSpeedInRight " data-wow-duration="1s" data-wow-delay="0s"
+                data-wow-iteration="1">
+                <p class="fw-500">Q：如何支付費用？</p>
+                <p>A：我們接受信用卡、銀行轉帳和第三方支付平台，您可以選擇最方便的支付方式。</p>
+                <hr>
+            </div>
+            <div class=" wow animate__lightSpeedInRight " data-wow-duration="1s" data-wow-delay="0s"
+                data-wow-iteration="1">
+                <p class="fw-500"> Q：是否有退款政策？</p>
+                <p>A：是的，我們有退款政策，但可能會扣除一定的手續費用，具體退款政策請參閱我們的網站或聯繫客服人員。</p>
+                <hr>
+            </div>
+            <div class=" wow animate__lightSpeedInRight " data-wow-duration="1s" data-wow-delay="0s"
+                data-wow-iteration="1">
+                <p class="fw-500">Q：我們如何聯繫你們的客服團隊？</p>
+                <p>A：您可以通過電話、郵件或社交媒體聯繫我們的客服團隊，我們將竭誠為您提供幫助和支持。</p>
+                <hr>
+            </div>
+            <div class=" wow animate__lightSpeedInRight " data-wow-duration="1s" data-wow-delay="0s"
+                data-wow-iteration="1">
+                <p class="fw-500">Q：我們如何確保行程的安全？</p>
+                <p>A：我們將採取一系列安全措施，包括預先評估風險、提供專業的導遊和引導、以及提供緊急援助服務，確保您的旅行安全順利。</p>
+                <hr>
+            </div>
+
+            <p>這些是我們經常收到的問題，希望能為您提供幫助。如果您有其他問題，請隨時與我們聯繫。</p>
+            <hr>
+        </div>
+    </section>
+    <!-- section 15 -->
+    <section id="s15">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link disabled wow animate__zoomIn" data-wow-duration="1s" data-wow-delay="0s"
+                        data-wow-iteration="infinite"> By 跨平台網站設置班 上課練習 2024.05</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">購物商城</a>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <!-- section 16 -->
+    <section>
+
+        <a href="#" class="s16 wow animate__shakeY" data-wow-duration="5s" data-wow-delay="0s"
+            data-wow-iteration="infinite"><i class="fa-solid fa-chevron-up"></i></a>
+    </section>
+
+
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./jquery/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script src="./js/wow.min.js"></script>
+    <script>
+
+    </script>
+    <script>
+
+        $(function () {
+            // wow 初始化
+            new WOW().init();
+
+            // github  counter-Up2 用 class="counter" 設定要滾動的數字
+            // counter-Up2
+            const counterUp = window.counterUp.default
+
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            // 執行 2秒 
+                            duration: 5000,
+                            // 跳動間隔 0.016秒
+                            delay: 10,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+
+                $("#age").bind("input propertychange",function(){
+                    console.log($(this).val());
+                if ($(this).val() > 17) {
+                    // 符合規定
+                    $("#age").removeClass("is-invalid");
+                    $("#age").addClass("is-valid");
+                    }
+                else{
+                    // 不符合規定
+                    $("#age").removeClass("is-valid");
+                    $("#age").addClass("is-invalid");
+                }
+            });
+            $("#password1").bind("input propertychange",function(){
+                console.log($("#password1").val());
+                if($("#password1").val() == $("#password").val()){
+                    // 符合規定
+                    $("#password1").removeClass("is-invalid");
+                    $("#password1").addClass("is-valid");
+                    }
+                else{
+                    // 不符合規定
+                    $("#password1").removeClass("is-valid");
+                    $("#password1").addClass("is-invalid");
+                }
+            });
+            }
+
+            const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+            // 每多一個要用數字滾動效果 就要多新增一個 
+
+            const el01 = document.querySelector('.counter01')
+            IO.observe(el01)
+
+            const el02 = document.querySelector('.counter02')
+            IO.observe(el02)
+
+            const el03 = document.querySelector('.counter03')
+            IO.observe(el03)
+
+            const el04 = document.querySelector('.counter04')
+            IO.observe(el04)
+        });
+    </script>
+
+
+</body>
+
+</html>
